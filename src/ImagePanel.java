@@ -222,11 +222,20 @@ public class ImagePanel extends JPanel implements MouseWheelListener  {
         if (selectionStart == null || selectionEnd == null) return;
     
         int tileSize = (int)(ImageHandler.TILE_SIZE * zoom);
+        Mask mask = imageHandler.getMask();
+        if (mask == null) {
+            return;
+        }
         
         int startX = Math.min(selectionStart.x, selectionEnd.x) / tileSize;
         int startY = Math.min(selectionStart.y, selectionEnd.y) / tileSize;
         int endX = Math.max(selectionStart.x, selectionEnd.x) / tileSize;
         int endY = Math.max(selectionStart.y, selectionEnd.y) / tileSize;
+
+        startX = Math.max(0, startX);
+        startY = Math.max(0, startY);
+        endX = Math.min(endX, mask.getWidth() - 1);
+        endY = Math.min(endY, mask.getHeight() - 1);
     
         // unless CTRL is pressed, we clear previous selection
         if (!isCtrlPressed) {
@@ -244,7 +253,6 @@ public class ImagePanel extends JPanel implements MouseWheelListener  {
         bufferNeedsUpdate = true;
         repaint();
     }
-
 
 
 
@@ -488,14 +496,14 @@ public class ImagePanel extends JPanel implements MouseWheelListener  {
     
         // Get the first selected tile
         Point firstTile = selectedTiles.iterator().next();  
+        
         Tile firstTileData = imageHandler.getMask().getTile(firstTile.x, firstTile.y);
-    
+        
+        
         // Create the dialog
         Window parentFrame = SwingUtilities.getWindowAncestor(this);
         JDialog dialog = new JDialog(parentFrame, "Edit Tile Properties", Dialog.ModalityType.APPLICATION_MODAL);
         dialog.setLayout(new GridLayout(3, 1));
-        // Centrer par rapport à la fenêtre principale
-        
 
         // Panel for Palette Selection
         JPanel palettePanel = new JPanel();
