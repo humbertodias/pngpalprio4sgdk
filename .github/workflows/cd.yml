@@ -41,6 +41,11 @@ jobs:
         run: |
           mvn -B -e -ntp clean package
 
+      - name: Upload artifact
+        uses: actions/upload-artifact@v5
+        with:
+          name: build-jar
+          path: target/PPPE4SGDK.jar          
       - name: Create GitHub Release
         if: startsWith(github.ref, 'refs/tags/')
         uses: softprops/action-gh-release@v2
