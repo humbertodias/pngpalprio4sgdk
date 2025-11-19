@@ -3,3 +3,5 @@ pngpalprio4sgdk.jar
 test/
 .vscode
 out
+target/
+.idea
