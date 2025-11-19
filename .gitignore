@@ -1,5 +1,5 @@
 config.properties
-pngpalprio4sgdk.jar
+*.jar
 test/
 .vscode
 out

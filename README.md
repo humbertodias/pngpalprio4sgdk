@@ -24,16 +24,19 @@ Need Java 8 (compiled with jdk1.8.0_441)
 
 ### GUI Mode : 
 
-Download PPPE4SGDK.jar<br>
+Download PPPE4SGDK.jar in relases<br>
 To show the GUI , simply run with Java: "java -jar PPPE4SGDK.jar"
 
 ### 🏭 Batch Mode (Command Line Processing)<br/>
 Run the editor via the command line for automated processing:<br/>
+```shell
 java -jar PPPE4SGDK.jar --b <image_path> <mask_path> <export_path>
+```
 
 Example:<br/>
+```shell
 java -jar PPPE4SGDK.jar --b bgb.png mask.msk bgb_palprio.png
-
+```
 
 
 ## Screenshots <br>
