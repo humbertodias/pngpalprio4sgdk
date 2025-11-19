@@ -1,3 +1,7 @@
+[![CI](https://github.com/rahzelk/pngpalprio4sgdk/actions/workflows/ci.yml/badge.svg)](https://github.com/rahzelk/pngpalprio4sgdk/actions/workflows/ci.yml)
+[![CD](https://github.com/rahzelk/pngpalprio4sgdk/actions/workflows/cd.yml/badge.svg)](https://github.com/rahzelk/pngpalprio4sgdk/actions/workflows/cd.yml)
+![GitHub all releases](https://img.shields.io/github/downloads/rahzelk/pngpalprio4sgdk/total)
+
 # PNG Palette and Priority Editor for SGDK  
 
 PPP Editor for SGDK is a Java-based tool for editing palette and priority masks on indexed 8bpp PNG images, specifically designed for SGDK (Sega Genesis Development Kit) projects.
